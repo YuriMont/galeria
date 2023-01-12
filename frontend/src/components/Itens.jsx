@@ -13,20 +13,13 @@ export function Itens({galeria, setGaleria}){
     imagens[index].favorito = !imagens[index].favorito;
     
     setGaleria(imagens);
-    await axios.put(`http://localhost:8080/u/${usuario_id}/galeria`, {
-      imagem_id: imagem[0].imagem_id,
-      galeria_id: imagem[0].usuario_id,
-      imagem: imagem[0].image,
-      titulo: imagem[0].titulo,
-      data_publicacao: imagem[0].data_publicacao,
-      favorito: !imagem[0].favorito,
-    });
+    await axios.put(`${import.meta.env.VITE_REACT_API_BACKEND_URL}/u/${usuario_id}/galeria/favorito?imagem_id=${imagem[0].imagem_id}`);
   }
 
   async function remover(imagem_id){
     var imagens_filtradas = galeria.filter((e) => e.imagem_id != imagem_id);
     setGaleria(imagens_filtradas);
-    await axios.delete(`http://localhost:8080/u/${usuario_id}/galeria?imagem_id=${imagem_id}`);
+    await axios.delete(`${import.meta.env.VITE_REACT_API_BACKEND_URL}/u/${usuario_id}/galeria/${imagem_id}`);
   }
 
     return(

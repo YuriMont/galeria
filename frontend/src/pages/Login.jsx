@@ -18,7 +18,7 @@ export function Login(){
 
     async function handleAddUser() {
         setDisabled(true)
-        await axios.post("http://localhost:8080/login", {
+        await axios.post(`${import.meta.env.VITE_REACT_API_BACKEND_URL}/login`, {
             email: email,
             senha: senha
        }).then((response) => {

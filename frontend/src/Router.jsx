@@ -9,7 +9,7 @@ export function Router(){
         <Routes>
             <Route path='/' element={<Login/>}/>
             <Route path='/u/:usuario_id/galeria' element={<Home/>}/>
-            <Route path='/imagem/:imagem_id' element={<Imagem/>}/>
+            <Route path='/u/:usuario_id/galeria/imagem/:imagem_id' element={<Imagem/>}/>
             <Route path='/signup' element={<Signup/>}/>
         </Routes>
     );

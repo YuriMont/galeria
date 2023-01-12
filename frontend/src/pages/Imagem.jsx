@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export function Imagem(){
-    const { imagem_id } = useParams();
+    const { usuario_id, imagem_id } = useParams();
     const [imagem, setImagem] = useState([])
 
     useEffect(() => {
        axios
-      .get(`http://localhost:8080/galeria?imagem_id=${imagem_id}`)
+      .get(`${import.meta.env.VITE_REACT_API_BACKEND_URL}/u/${usuario_id}/galeria${imagem_id}`)
       .then((response) => {
         setImagem(response.data[0].imagem);
       });

@@ -24,7 +24,7 @@ export function Header({ option, setOption }) {
   }
 
   function handleDeleteUser() {
-    axios.delete(`localhost:8080/u/delete?usuario_id=${usuario_id}`);
+    axios.delete(`${import.meta.env.VITE_REACT_API_BACKEND_URL}/u/delete?usuario_id=${usuario_id}`);
     navigate("/");
   }
 

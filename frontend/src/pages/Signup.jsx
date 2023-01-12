@@ -20,7 +20,7 @@ export function Signup() {
   async function handleAddUser() {
     setDisabled(true);
     await axios
-      .post("http://localhost:8080/cadastro", {
+      .post(`${import.meta.env.VITE_REACT_API_BACKEND_URL}/cadastro`, {
         nome: name,
         email: emailAddress,
         senha: password,

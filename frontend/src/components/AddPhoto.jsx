@@ -36,7 +36,6 @@ export function AddPhoto({setGaleria, galeria, setOption}){
                 imagem: image,
                 titulo: titulo,
                 data_publicacao: fomatarData(new Date()),
-                favorito: false,
             }).then((response)=>{
                 console.log(response.data);
                 setGaleria([...galeria, response.data]);
