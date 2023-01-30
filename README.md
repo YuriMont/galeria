@@ -19,7 +19,7 @@ O projeto fullstack tratase de uma galeria de imagem, onde o usuario poderá se 
 * Axios
 
 ## 📌 Funcionalidades
-* Fazer casdatro
+* Fazer cadastro
 * Realizar login
 * Fazer upload de qualquer imagem
 * Marcar e desmacar imagem como favorita
