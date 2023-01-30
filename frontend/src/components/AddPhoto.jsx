@@ -32,10 +32,12 @@ export function AddPhoto({setGaleria, galeria, setOption}){
         setDesabilitar(true);
         if(titulo != "" && image != vazio){
             await axios.post(`http://localhost:8080/u/${usuario_id}/galeria`, {
-                galeria_id: usuario_id,
                 imagem: image,
                 titulo: titulo,
                 data_publicacao: fomatarData(new Date()),
+                usuario: {
+                    id: usuario_id
+                }
             }).then((response)=>{
                 console.log(response.data);
                 setGaleria([...galeria, response.data]);

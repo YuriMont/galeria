@@ -81,7 +81,7 @@ public class UsuarioControle {
     }
 
     @GetMapping("/u/{usuario_id}/galeria")
-    public Iterable<?> galeria(@PathVariable Long usuario_id) {
+    public Iterable<GaleriaModelo> galeria(@PathVariable Long usuario_id) {
         return us.listarImagens(usuario_id);
     }
 
@@ -90,8 +90,8 @@ public class UsuarioControle {
         return us.verImagem(usuario_id, imagem_id);
     }
 
-    @GetMapping("u/{usuario_id}/galeria")
-    public Iterable pesquisaImagens(@PathVariable Long usuario_id, @RequestParam(name = "find") String pesquisa) {
+    @GetMapping("u/{usuario_id}/galeria/find/{pesquisa}")
+    public Iterable<GaleriaModelo> pesquisaImagens(@PathVariable Long usuario_id, @PathVariable String pesquisa) {
         return us.pesquisarImagens(pesquisa, usuario_id);
     }
 
